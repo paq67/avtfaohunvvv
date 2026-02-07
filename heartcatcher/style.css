@@ -50,6 +50,29 @@ body {
   background: white;
   font-family: 'Press Start 2P', cursive;
   cursor: pointer;
+  font-size: 10px;
+  touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  .start-overlay {
+    padding: 20px 30px;
+  }
+  
+  .start-overlay h1 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .start-overlay p {
+    font-size: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .start-overlay button {
+    padding: 10px 20px;
+    font-size: 8px;
+  }
 }
 
 /* GAME */
@@ -58,6 +81,8 @@ body {
   width: 100vw;
   height: 100vh;
   background: url("../assets/bg_1.png") center/cover no-repeat;
+  touch-action: none;
+  overflow: hidden;
 }
 
 #score {
@@ -69,6 +94,16 @@ body {
   border-radius: 20px;
   font-family: 'Press Start 2P', cursive;
   font-size: 12px;
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  #score {
+    font-size: 10px;
+    padding: 8px 12px;
+    top: 10px;
+    left: 10px;
+  }
 }
 
 /* NORMALIZED IMAGE SIZES */
@@ -79,6 +114,23 @@ body {
   height: 96px;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #bunny {
+    width: 70px;
+    height: 70px;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #bunny {
+    width: 60px;
+    height: 60px;
+    bottom: 10px;
+  }
 }
 
 .heart {
@@ -87,6 +139,21 @@ body {
   height: 48px;
   top: -50px;
   animation: fall linear forwards;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .heart {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heart {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @keyframes fall {
@@ -98,16 +165,30 @@ body {
   position: fixed;
   top: 38%;
   width: 100%;
+  padding: 0 20px;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
   font-size: 14px;
   color: #6aa9dd;
   opacity: 0;
   transition: opacity 0.6s ease;
+  pointer-events: none;
 }
 
 #floatingText.show {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #floatingText {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #floatingText {
+    font-size: 10px;
+  }
 }
 
 /* FLOATING IMAGE */
@@ -133,6 +214,23 @@ body {
   border-radius: 16px;
   border: 4px solid #7ab8ff;
   background: white;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #floatingImage img {
+    width: 150px;
+    height: 150px;
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  #floatingImage img {
+    width: 120px;
+    height: 120px;
+    border-width: 2px;
+  }
 }
 
 /* QUESTION BOX */
@@ -161,11 +259,30 @@ body {
   border: 6px solid #fff;
   display: block;
   margin: 0 auto 12px auto;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #questionImg {
+    width: 180px;
+    height: 180px;
+    border-width: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  #questionImg {
+    width: 140px;
+    height: 140px;
+    border-width: 3px;
+    margin-bottom: 10px;
+  }
 }
 .choices {
   display: flex;
   gap: 12px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .choices button {
   padding: 12px 18px;
@@ -175,8 +292,32 @@ body {
   cursor: pointer;
   background: #7ab8ff;
   color: white;
+  font-size: 10px;
+  touch-action: manipulation;
 }
 .choices button#btnNo { background: #ff8a8a; }
+
+@media (max-width: 768px) {
+  .choices {
+    gap: 10px;
+  }
+  
+  .choices button {
+    padding: 10px 14px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .choices {
+    gap: 8px;
+  }
+  
+  .choices button {
+    padding: 8px 12px;
+    font-size: 7px;
+  }
+}
 
 /* Normalize other images globally */
 img { max-width: 100%; height: auto; }
@@ -196,5 +337,30 @@ img { max-width: 100%; height: auto; }
   cursor: pointer;
   background: #7ab8ff;
   color: #fff;
+  font-size: 10px;
+  touch-action: manipulation;
+  margin-top: 8px;
 }
 .singleYesBtn { background: #ffb86b; }
+
+@media (max-width: 768px) {
+  .outcomeMsg {
+    font-size: 12px;
+  }
+  
+  .replayBtn, .singleYesBtn {
+    padding: 8px 12px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .outcomeMsg {
+    font-size: 10px;
+  }
+  
+  .replayBtn, .singleYesBtn {
+    padding: 6px 10px;
+    font-size: 7px;
+  }
+}

@@ -35,10 +35,18 @@ startBtn.onclick = () => {
   }
 };
 
+// Desktop mouse control
 document.addEventListener("mousemove", e => {
   if (!gameStarted || gameEnded) return;
   bunny.style.left = `${e.clientX - bunny.offsetWidth / 2}px`;
 });
+
+// Mobile touch control
+document.addEventListener("touchmove", e => {
+  if (!gameStarted || gameEnded) return;
+  const touch = e.touches[0];
+  bunny.style.left = `${touch.clientX - bunny.offsetWidth / 2}px`;
+}, { passive: true });
 
 function spawnHeart() {
   if (!gameStarted || gameEnded) return;
