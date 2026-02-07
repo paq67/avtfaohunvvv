@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catch My Heart 💙</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- START SCREEN -->
+<div id="startScreen">
+  <div class="start-overlay">
+    <h1>Catch My Heart 💙</h1>
+    <p>made just for you</p>
+    <button id="startBtn">start</button>
+  </div>
+</div>
+
+<!-- GAME -->
+<div id="game">
+  <div id="score">💙 0</div>
+  <img id="bunny" src="../assets/bunny.png">
+</div>
+
+<!-- FLOATING TEXT -->
+<div id="floatingText"></div>
+
+<!-- FLOATING IMAGE -->
+<div id="floatingImage">
+  <img id="floatingImg">
+</div>
+
+<!-- QUESTION BOX (appears at game end) -->
+<div id="questionBox" class="hidden">
+  <div class="question-overlay">
+    <img id="questionImg" src="../assets/qn%20cat.png" alt="question cat">
+    <div class="choices">
+      <button id="btnYes">Yes</button>
+      <button id="btnNo">No</button>
+    </div>
+  </div>
+</div>
+
+<audio id="bgMusic" src="../assets/music.mp3" loop></audio>
+<audio id="catchSound" src="../assets/catch.mp3"></audio>
+<audio id="rewardSound" src="../assets/reward.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

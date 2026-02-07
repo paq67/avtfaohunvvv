@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #cfe9ff;
+}
+
+/* START SCREEN */
+#startScreen {
+  position: fixed;
+  inset: 0;
+  background: url("../assets/smile.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.start-overlay {
+  background: rgba(255,255,255,0.15);
+  padding: 30px 40px;
+  border-radius: 24px;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.start-overlay h1 {
+  font-size: 18px;
+  color: #6aa9dd;
+  margin-bottom: 10px;
+}
+
+.start-overlay p {
+  font-size: 10px;
+  margin-bottom: 20px;
+  color: #7ab8ff;
+}
+
+.start-overlay button {
+  padding: 12px 26px;
+  border-radius: 20px;
+  border: 4px solid #7ab8ff;
+  background: white;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+}
+
+/* GAME */
+#game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("../assets/bg_1.png") center/cover no-repeat;
+}
+
+#score {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  background: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+}
+
+/* NORMALIZED IMAGE SIZES */
+#bunny {
+  position: absolute;
+  bottom: 20px;
+  width: 96px;
+  height: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heart {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: -50px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(120vh); }
+}
+
+/* FLOATING TEXT */
+#floatingText {
+  position: fixed;
+  top: 38%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  color: #6aa9dd;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+#floatingText.show {
+  opacity: 1;
+}
+
+/* FLOATING IMAGE */
+#floatingImage {
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(10px);
+}
+
+#floatingImage.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#floatingImage img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 4px solid #7ab8ff;
+  background: white;
+}
+
+/* QUESTION BOX */
+.hidden { display: none; }
+#questionBox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  z-index: 200;
+}
+.question-overlay {
+  background: rgba(255,255,255,0.95);
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+#questionImg {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 6px solid #fff;
+  display: block;
+  margin: 0 auto 12px auto;
+}
+.choices {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.choices button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  background: #7ab8ff;
+  color: white;
+}
+.choices button#btnNo { background: #ff8a8a; }
+
+/* Normalize other images globally */
+img { max-width: 100%; height: auto; }
+
+/* Outcome and replay styles */
+.outcomeMsg {
+  font-family: 'Press Start 2P', cursive;
+  color: #6aa9dd;
+  font-size: 14px;
+  padding: 8px 0;
+}
+.replayBtn, .singleYesBtn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  background: #7ab8ff;
+  color: #fff;
+}
+.singleYesBtn { background: #ffb86b; }
