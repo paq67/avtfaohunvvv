@@ -13,7 +13,7 @@ body {
 #startScreen {
   position: fixed;
   inset: 0;
-  background: url("../assets/smile.png") center/cover no-repeat;
+  background: url("./assets/smile.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,7 +80,7 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url("../assets/bg_1.png") center/cover no-repeat;
+  background: url("./assets/bg_1.png") center/cover no-repeat;
   touch-action: none;
   overflow: hidden;
 }

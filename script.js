@@ -52,7 +52,7 @@ function spawnHeart() {
   if (!gameStarted || gameEnded) return;
 
   const heart = document.createElement("img");
-  heart.src = "../assets/heart.png";
+  heart.src = "./assets/heart.png";
   heart.className = "heart";
   heart.style.left = Math.random() * (window.innerWidth - 48) + "px";
   heart.style.animationDuration = speed + "s";
@@ -98,9 +98,8 @@ function showMessage(n) {
   floatingText.textContent = map[n];
   floatingText.classList.add("show");
 
-  if (n === 15) floatingImg.src = "./assets/us_3.png";
-  if (n === 15) floatingImg.src = "../assets/us 3.png";
-  if (n === 20) floatingImg.src = "../assets/us.png";
+  if (n === 15) floatingImg.src = "./assets/us 3.png";
+  if (n === 20) floatingImg.src = "./assets/us.png";
   if (n >= 15) floatingImage.classList.add("show");
 
   setTimeout(() => {
@@ -139,7 +138,7 @@ function resetToStart() {
   scoreEl.textContent = `💙 ${score}`;
   clearHearts();
   // restore question image and hide box
-  if (questionImg) questionImg.src = "../assets/qn cat.png";
+  if (questionImg) questionImg.src = "./assets/qn cat.png";
   if (questionBox) {
     questionBox.classList.add('hidden');
     questionBox.style.display = 'none';
@@ -166,7 +165,7 @@ function resetToStart() {
 function showYesOutcome() {
   if (!choicesEl) return;
   // show yes image
-  if (questionImg) questionImg.src = "../assets/yes cat.png";
+  if (questionImg) questionImg.src = "./assets/yes cat.png";
   // clear choices and show message + replay
   choicesEl.innerHTML = '';
   const msg = document.createElement('div');
@@ -183,7 +182,7 @@ function showYesOutcome() {
 function showNoOutcome() {
   if (!choicesEl) return;
   // show no image
-  if (questionImg) questionImg.src = "../assets/no cat.png";
+  if (questionImg) questionImg.src = "./assets/no cat.png";
   // clear choices and show "not crying" + single Yes? button
   choicesEl.innerHTML = '';
   const msg = document.createElement('div');
