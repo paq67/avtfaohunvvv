@@ -1,3 +1,10 @@
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 * {
   box-sizing: border-box;
   user-select: none;
@@ -5,8 +12,12 @@
 
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background: #cfe9ff;
+  position: fixed;
 }
 
 /* START SCREEN */
@@ -77,9 +88,11 @@ body {
 
 /* GAME */
 #game {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: url("./assets/bg_1.png") center/cover no-repeat;
   touch-action: none;
   overflow: hidden;
